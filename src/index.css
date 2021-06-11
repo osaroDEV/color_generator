@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,13 +6,51 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  --btn-color: red;
+  --bg-btn-color: #eee;
+
+  /* transitions */
+  --btn-trans: 0.5s all;
+
+  /* borders */
+  --btn-brd-rad: 3px;
+  --border: none;
+  --btn-pad: 0.25em 0.5em;
+
+  /* margins */
+  --margin-btm: 1em;
+
+  /* positions */
+  --footer-center: 50%;
+  --footer-trans: translate(-50%);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+main {
+  margin: 0 auto;
+  width: 100vw;
+}
+
+main h3 {
+  margin: 1em 0;
+}
+
 form {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--margin-btm);
 }
 input {
   font-size: 1.3em;
@@ -24,8 +61,37 @@ input {
 }
 
 .cont {
-  width: 200px;
-  height: 200px;
+  width: 330px;
+  height: 330px;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cont h1,
+.cont button,
+.cont p {
+  margin-bottom: var(--margin-btm);
+}
+
+@media (max-width: 360px) {
+  .cont {
+    width: 120px;
+    height: 120px;
+    font-size: 0.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cont h1,
+  .cont button,
+  .cont p {
+    margin-bottom: 0.5em;
+  }
 }
 
 .light {
@@ -41,4 +107,24 @@ input {
   margin-left: 0.5em;
 }
 
+.hex-btn {
+  color: var(--btn-color);
+  background: var(--bg-btn-color);
+  border-radius: var(--btn-brd-rad);
+  border: var(--border);
+  padding: var(--btn-pad);
+  transition: var(--btn-trans);
+}
 
+.hex-btn:hover {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: yellow;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+footer {
+}

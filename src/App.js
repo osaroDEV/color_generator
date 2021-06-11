@@ -24,8 +24,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <h3>Color Generator</h3>
+      <main>
+        <h3 className="center">Color Generator</h3>
         <form onSubmit={handleSubmit}>
           <input
             className={`${error ? 'error' : null}`}
@@ -38,19 +38,21 @@ function App() {
             submit
           </button>
         </form>
-      </div>
+      </main>
       <div
         style={{
-          height: '50vh',
           width: '100vw',
           display: 'flex',
           flexWrap: 'wrap',
         }}
       >
         {list.map((color, index) => {
-          return <UnitColor key={index} color={color} />;
+          return <UnitColor key={index} color={color} index={index} />;
         })}
       </div>
+      <footer className="center">
+        <h5>&copy;2021 osaroDEV</h5>
+      </footer>
     </>
   );
 }
